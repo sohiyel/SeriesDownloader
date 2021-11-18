@@ -1,8 +1,15 @@
 from bs4 import BeautifulSoup, SoupStrainer
 import requests
+import argparse
+
+parser = argparse.ArgumentParser('Find links')
+
+parser.add_argument('--source', dest=r'source', help='input base url to find links', type=str, default='')
+
+args = parser.parse_args()
 
 #Paste the url of the page containing the urls of the series that you want to download between quotaions
-url = ""
+url = args.source
 
 page = requests.get(url)    
 data = page.text

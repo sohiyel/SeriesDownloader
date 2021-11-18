@@ -1,11 +1,18 @@
-# import urllib2
+import argparse
+
+parser = argparse.ArgumentParser('Find links')
+
+
+parser.add_argument('--username', dest=r'username', help='input username to login', type=str, default=0)
+parser.add_argument('--password', dest=r'password', help='input password', type=str, default=0)
+
+args = parser.parse_args()
 
 #Incase if the site needs to authenticate
-username = ''
-password = ''
+username = args.username
+password = args.password
 
-# #This should be the base url you wanted to access.
-baseurl = ''
+
 
 
 import requests
